@@ -5,8 +5,10 @@
 School and work are hard, life is stressful, and complaining too much to friends can only end badly. Stress, Gripe, Happy is a platform that allows a user to upload their stresses, write as many gripes as they want for each of these stresses, and finally, find bliss and comfort in the form of happy gifs. Users can upload new stresses and gripes, see their old stresses and gripes, and click the "Make Me Happy" button in order to generate a random gif with the tag "happy".
 
 Stress, Gripe, Happy uses the Giphy API to bring in gifs with the tag happy, and angluar.js to make it all look pretty.
+<!-- 
 
 For extensive docs go to: http://linserv2.cims.nyu.edu:15731/appDocs
+ -->
 
 
 ## Data Model
