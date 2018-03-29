@@ -13,7 +13,7 @@
 */
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const bcrypt   = require('bcrypt-nodejs');
+const bcrypt = require('bcrypt-nodejs');
 
 
 /**
@@ -115,6 +115,6 @@ if (process.env.NODE_ENV === 'PRODUCTION') {
    mongoose.connect(dbconf, {useMongoClient: true});
 } else {
     // if we're not in PRODUCTION mode, then use
-    let dbconf = 'mongodb://localhost/djm552-final-project';
+    let dbconf = 'mongodb://localhost/stress-gripe-happy';
     mongoose.connect(dbconf, {useMongoClient: true});
 }

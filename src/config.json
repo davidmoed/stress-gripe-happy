@@ -1,5 +1,5 @@
 {
-   "dbconf": "mongodb://localhost/djm552-final-project",
-   "port": 15731,
+   "dbconf": "mongodb://localhost/stress-gripe-happy",
+   "port": 27017,
    "giphy_api_key": "hEmTmcEWHO55vkoE7SAAHG3uqs70sSd7"
 }
