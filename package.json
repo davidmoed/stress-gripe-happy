@@ -1,0 +1,42 @@
+{
+  "name": "djm552-final-project",
+  "version": "1.0.0",
+  "description": "Stress, Gripe, Happy",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyu-csci-ua-0480-007-fall-2017/djm552-final-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nyu-csci-ua-0480-007-fall-2017/djm552-final-project/issues"
+  },
+  "homepage": "https://github.com/nyu-csci-ua-0480-007-fall-2017/djm552-final-project#readme",
+  "dependencies": {
+    "@angular/cdk": "^2.0.0-beta.12",
+    "@angular/material": "^2.0.0-beta.12",
+    "angular": "^1.6.6",
+    "bcrypt": "^1.0.3",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "hbs": "^4.0.1",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.12.6",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.5.5",
+    "jsdoc-route-plugin": "^0.1.0"
+  }
+}

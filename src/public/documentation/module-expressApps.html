@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SGH x JSDoc: expressApps</title>
+	<script src="scripts/prettify/prettify.js">
+	</script>
+	<script src="scripts/prettify/lang-css.js">
+	</script><!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	<link href="styles/prettify-tomorrow.css" rel="stylesheet" type="text/css">
+	<link href="styles/jsdoc-default.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="main">
+		<h1 class="page-title">Module: expressApps</h1>
+		<section>
+			<header></header>
+			<article>
+				<div class="container-overview">
+					<div class="description">
+						<h2>All gets and posts for the web app</h2>
+					</div>
+					<dl class="details">
+						<dt class="tag-source">Source:</dt>
+						<dd class="tag-source">
+							<ul class="dummy">
+								<li>
+									<a href="app.js.html">app.js</a>, <a href="app.js.html#line66">line 66</a>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<h3 class="subsection-title">Members</h3>
+				<h4 class="name" id="404"><span class="type-signature">(route)</span> 404<span class="type-signature"></span></h4>
+				<div class="description">
+					<h5>Route:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th class="last">Path</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="type">GET</td>
+							<td class="name last">*</td>
+						</tr>
+					</table>Set the 404 Route (ALWAYS Keep this as the last route)
+					<h5>Authentication</h5>
+					<p>The route requires that the user be logged in using the isLoggedIn function</p>
+				</div>
+				<dl class="details">
+					<dt class="tag-source">Source:</dt>
+					<dd class="tag-source">
+						<ul class="dummy">
+							<li>
+								<a href="app.js.html">app.js</a>, <a href="app.js.html#line441">line 441</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<h4 class="name" id="AddGripes"><span class="type-signature">(route)</span> Add Gripes<span class="type-signature"></span></h4>
+				<div class="description">
+					<h5>Route:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th class="last">Path</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="type">POST</td>
+							<td class="name last">/addGripeForm</td>
+						</tr>
+					</table>Post new gripes to a specified stress
+					<h5>Body Parameters:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th class="last">Description</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="name">req.body.newGripe</td>
+							<td class="type">string</td>
+							<td class="description last">check the input box for new gripes</td>
+						</tr>
+						<tr>
+							<td class="name">req.body.curStress</td>
+							<td class="type">string</td>
+							<td class="description last">The currently selected stress in the dropdown menu on the Add page</td>
+						</tr>
+						<tr>
+							<td class="name">req.user</td>
+							<td class="type">string</td>
+							<td class="description last">The id of the current user</td>
+						</tr>
+					</table>
+				</div>
+				<dl class="details">
+					<dt class="tag-source">Source:</dt>
+					<dd class="tag-source">
+						<ul class="dummy">
+							<li>
+								<a href="app.js.html">app.js</a>, <a href="app.js.html#line306">line 306</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<h4 class="name" id="AddPage"><span class="type-signature">(route)</span> Add Page<span class="type-signature"></span></h4>
+				<div class="description">
+					<h5>Route:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th class="last">Path</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="type">GET</td>
+							<td class="name last">/add</td>
+						</tr>
+					</table>Create a route handler to set the page up that has the forms to add stresses and gripes
+					<h5>Authentication</h5>
+					<p>The route requires that the user be logged in using the isLoggedIn function</p>
+				</div>
+				<dl class="details">
+					<dt class="tag-source">Source:</dt>
+					<dd class="tag-source">
+						<ul class="dummy">
+							<li>
+								<a href="app.js.html">app.js</a>, <a href="app.js.html#line235">line 235</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<h4 class="name" id="AddStresses"><span class="type-signature">(route)</span> Add Stresses<span class="type-signature"></span></h4>
+				<div class="description">
+					<h5>Route:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th class="last">Path</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="type">POST</td>
+							<td class="name last">addStressForm</td>
+						</tr>
+					</table>Add new stresses to the user's db
+					<h5>Body Parameters:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th class="last">Description</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="name">req.body.newStress</td>
+							<td class="type">string</td>
+							<td class="description last">check the input box for new stresses</td>
+						</tr>
+						<tr>
+							<td class="name">req.user</td>
+							<td class="type">string</td>
+							<td class="description last">The id of the current user</td>
+						</tr>
+					</table>
+				</div>
+				<dl class="details">
+					<dt class="tag-source">Source:</dt>
+					<dd class="tag-source">
+						<ul class="dummy">
+							<li>
+								<a href="app.js.html">app.js</a>, <a href="app.js.html#line259">line 259</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<h4 class="name" id="DeleteStress"><span class="type-signature">(route)</span> Delete Stress<span class="type-signature"></span></h4>
+				<div class="description">
+					<h5>Route:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th class="last">Path</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="type">POST</td>
+							<td class="name last">/deleteStress</td>
+						</tr>
+					</table>delete stresses from the user's db
+					<h5>Body Parameters:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th class="last">Description</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="name">req.user</td>
+							<td class="type">string</td>
+							<td class="description last">The id of the current user</td>
+						</tr>
+						<tr>
+							<td class="name">req.body.curStress</td>
+							<td class="type">string</td>
+							<td class="description last">The currently selected stress in the dropdown menu on the Happy page</td>
+						</tr>
+					</table>
+				</div>
+				<dl class="details">
+					<dt class="tag-source">Source:</dt>
+					<dd class="tag-source">
+						<ul class="dummy">
+							<li>
+								<a href="app.js.html">app.js</a>, <a href="app.js.html#line414">line 414</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<h4 class="name" id="Docs"><span class="type-signature">(route)</span> Docs<span class="type-signature"></span></h4>
+				<div class="description">
+					<h5>Route:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th class="last">Path</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="type">GET</td>
+							<td class="name last">/appDocs</td>
+						</tr>
+					</table>Go to the site docs generated with jsdoc
+				</div>
+				<dl class="details">
+					<dt class="tag-source">Source:</dt>
+					<dd class="tag-source">
+						<ul class="dummy">
+							<li>
+								<a href="app.js.html">app.js</a>, <a href="app.js.html#line432">line 432</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<h4 class="name" id="GetGripeforHomepage"><span class="type-signature">(route)</span> Get Gripe for Homepage<span class="type-signature"></span></h4>
+				<div class="description">
+					<h5>Route:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th class="last">Path</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="type">GET</td>
+							<td class="name last">/getGripe</td>
+						</tr>
+					</table>Create a route handler to the main page that gets the current stress and the gripes associated with it
+					<h5>Authentication</h5>
+					<p>The route requires that the user be logged in using the isLoggedIn function</p>
+					<h5>Body Parameters:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th class="last">Description</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="name">req.user</td>
+							<td class="type">string</td>
+							<td class="description last">The id of the current user</td>
+						</tr>
+					</table>
+					<h5>Query Parameters:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th class="last">Description</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="name">theStress</td>
+							<td class="type">string</td>
+							<td class="description last">The currently selected stress in the homepage dropdown</td>
+						</tr>
+					</table>
+				</div>
+				<dl class="details">
+					<dt class="tag-source">Source:</dt>
+					<dd class="tag-source">
+						<ul class="dummy">
+							<li>
+								<a href="app.js.html">app.js</a>, <a href="app.js.html#line189">line 189</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<h4 class="name" id="HappyPage"><span class="type-signature">(route)</span> Happy Page<span class="type-signature"></span></h4>
+				<div class="description">
+					<h5>Route:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th class="last">Path</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="type">GET</td>
+							<td class="name last">/happy</td>
+						</tr>
+					</table>Create a route handler to set the page up with the happy gifs
+					<h5>Authentication</h5>
+					<p>The route requires that the user be logged in using the isLoggedIn function</p>
+					<h5>Body Parameters:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th class="last">Description</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="name">req.user</td>
+							<td class="type">string</td>
+							<td class="description last">The id of the current user</td>
+						</tr>
+					</table>
+				</div>
+				<dl class="details">
+					<dt class="tag-source">Source:</dt>
+					<dd class="tag-source">
+						<ul class="dummy">
+							<li>
+								<a href="app.js.html">app.js</a>, <a href="app.js.html#line359">line 359</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<h4 class="name" id="Homepage"><span class="type-signature">(route)</span> Homepage<span class="type-signature"></span></h4>
+				<div class="description">
+					<h5>Route:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th class="last">Path</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="type">GET</td>
+							<td class="name last">/</td>
+						</tr>
+					</table>Create a route handler to the main page
+					<h5>Authentication</h5>
+					<p>The route requires that the user be logged in using the isLoggedIn function</p>
+					<h5>Body Parameters:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th class="last">Description</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="name">req.user</td>
+							<td class="type">string</td>
+							<td class="description last">The id of the current user</td>
+						</tr>
+					</table>
+				</div>
+				<dl class="details">
+					<dt class="tag-source">Source:</dt>
+					<dd class="tag-source">
+						<ul class="dummy">
+							<li>
+								<a href="app.js.html">app.js</a>, <a href="app.js.html#line151">line 151</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<h4 class="name" id="Login"><span class="type-signature">(route)</span> Login<span class="type-signature"></span></h4>
+				<div class="description">
+					<h5>Route:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th class="last">Path</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="type">GET</td>
+							<td class="name last">/login</td>
+						</tr>
+					</table>Create a route handler to the login page
+				</div>
+				<dl class="details">
+					<dt class="tag-source">Source:</dt>
+					<dd class="tag-source">
+						<ul class="dummy">
+							<li>
+								<a href="app.js.html">app.js</a>, <a href="app.js.html#line95">line 95</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<h4 class="name" id="LoginAuthentication"><span class="type-signature">(route)</span> Login Authentication<span class="type-signature"></span></h4>
+				<div class="description">
+					<h5>Route:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th class="last">Path</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="type">POST</td>
+							<td class="name last">/login</td>
+						</tr>
+					</table>Check for proper authentication and redirect to add and back to signup accordingly
+					<h5>Authentication</h5>
+					<p>This post uses passport authentication to ensure the user entered a proper username and password</p>
+				</div>
+				<dl class="details">
+					<dt class="tag-source">Source:</dt>
+					<dd class="tag-source">
+						<ul class="dummy">
+							<li>
+								<a href="app.js.html">app.js</a>, <a href="app.js.html#line108">line 108</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<h4 class="name" id="Logout"><span class="type-signature">(route)</span> Logout<span class="type-signature"></span></h4>
+				<div class="description">
+					<h5>Route:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th class="last">Path</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="type">GET</td>
+							<td class="name last">logout</td>
+						</tr>
+					</table>Logout the current user using passport and redirect to the login page
+					<h5>Authentication</h5>
+					<p>This calls a passport function that logs out the current user</p>
+				</div>
+				<dl class="details">
+					<dt class="tag-source">Source:</dt>
+					<dd class="tag-source">
+						<ul class="dummy">
+							<li>
+								<a href="app.js.html">app.js</a>, <a href="app.js.html#line121">line 121</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<h4 class="name" id="Signup"><span class="type-signature">(route)</span> Signup<span class="type-signature"></span></h4>
+				<div class="description">
+					<h5>Route:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th class="last">Path</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="type">GET</td>
+							<td class="name last">/signup</td>
+						</tr>
+					</table>Create a route handler to the signup page
+				</div>
+				<dl class="details">
+					<dt class="tag-source">Source:</dt>
+					<dd class="tag-source">
+						<ul class="dummy">
+							<li>
+								<a href="app.js.html">app.js</a>, <a href="app.js.html#line71">line 71</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<h4 class="name" id="SignupAuthentication"><span class="type-signature">(route)</span> Signup Authentication<span class="type-signature"></span></h4>
+				<div class="description">
+					<h5>Route:</h5>
+					<table class="params">
+						<thead>
+							<tr>
+								<th>Method</th>
+								<th class="last">Path</th>
+							</tr>
+						</thead>
+						<tr>
+							<td class="type">POST</td>
+							<td class="name last">/signup</td>
+						</tr>
+					</table>Check for proper authentication and redirect to add and back to signup accordingly
+					<h5>Authentication</h5>
+					<p>This post uses passport authentication to ensure the user entered a proper username and password</p>
+				</div>
+				<dl class="details">
+					<dt class="tag-source">Source:</dt>
+					<dd class="tag-source">
+						<ul class="dummy">
+							<li>
+								<a href="app.js.html">app.js</a>, <a href="app.js.html#line82">line 82</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+				<h3 class="subsection-title">Methods</h3>
+				<h4 class="name" id="~isLoggedIn"><span class="type-signature">(inner)</span> isLoggedIn<span class="signature">(req, res, next)</span><span class="type-signature"></span></h4>
+				<div class="description">
+					Check if the user is properly logged in, if not redirect to the login page
+				</div>
+				<h5>Parameters:</h5>
+				<table class="params">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Type</th>
+							<th class="last">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="name"><code>req</code></td>
+							<td class="type"></td>
+							<td class="description last">the http request</td>
+						</tr>
+						<tr>
+							<td class="name"><code>res</code></td>
+							<td class="type"></td>
+							<td class="description last">the http response</td>
+						</tr>
+						<tr>
+							<td class="name"><code>next</code></td>
+							<td class="type"></td>
+							<td class="description last">the next page due to be called in a redirect</td>
+						</tr>
+					</tbody>
+				</table>
+				<dl class="details">
+					<dt class="tag-source">Source:</dt>
+					<dd class="tag-source">
+						<ul class="dummy">
+							<li>
+								<a href="app.js.html">app.js</a>, <a href="app.js.html#line133">line 133</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+			</article>
+		</section>
+	</div>
+	<nav>
+		<h2><a href="index.html">Home</a></h2>
+		<h3>Pages</h3>
+		<ul>
+			<li>
+				<a href="app.js.html">app.js</a>
+			</li>
+			<li>
+				<a href="db.js.html">db.js</a>
+			</li>
+		</ul>
+		<h3>Modules</h3>
+		<ul>
+			<li>
+				<a href="module-dbDependencies.html">dbDependencies</a>
+			</li>
+			<li>
+				<a href="module-dependencies.html">dependencies</a>
+			</li>
+			<li>
+				<a href="module-expressApps.html">expressApps</a>
+			</li>
+			<li>
+				<a href="module-schemaSetup.html">schemaSetup</a>
+			</li>
+		</ul>
+	</nav><br class="clear">
+	<br class="clear">
+	<footer>
+		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Nov 23 2017 01:34:54 GMT-0500 (EST)
+	</footer>
+	<script>
+	prettyPrint();
+	</script>
+	<script src="scripts/linenumber.js">
+	</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<div class="page-header">
+   <h4><a href="/">【S】【G】【H】</a>- {{user.local.email}}</h4>
+</div>
+<div class="main-homepage col-md-12">
+
+
+   <form method="GET" action="/getGripe">
+   <div class="main-header col-md-4">
+      <h2>Stress</h2>
+      <div class="main-section stress-section" style="display:table;height:300px;">
+         <div class="form-group" style="display:table-cell;vertical-align:bottom;">
+         <select class="form-control" name="theStress">
+           {{#each stressObj}}
+               <option>{{this.stressName}}</option>
+           {{/each}}
+         </select>
+         </div>
+      </div>
+   </div>
+
+   <div class="main-header col-md-4">
+      <h2>Gripe</h2>
+      <div class="main-section gripes-section" style="display:table;height:300px;">
+         <div style="display:table-cell;vertical-align:bottom;">
+            <ul class="display-gripes">
+            {{#each gripeArr}}
+               <li>{{gripeStr}}</li>
+            {{/each}}
+            </ul>
+         </div>
+      </div>
+      <div class="random-gripe-button">
+         <h4>Click below to see your gripes!</h4>
+         <button>Give Me A Gripe</button>
+      </div>
+   </div>
+   </form>
+
+   <div class="main-header col-md-4">
+      <h2>Happy</h2>
+      <a href="/happy"><div class="main-section happy-button" style="display:table;height:300px;">
+         <div style="display:table-cell;vertical-align:bottom;">
+            <div><h2>Make Me Happy!</h2></div>
+         </div>
+      </div></a>
+   </div>
+</div>
+
+<div class="col-md-12">
+   <div class="main-bottom homepage-bottom">
+      <h2><a href="/add">I Have More Stresses and Gripes</a></h2>
+      <a href="/logout">Logout</a>
+   </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="page-header">
+   <h4><a href="/">【S】【G】【H】</a>- {{user.local.email}}</h4>
+</div>
+<div class="main-homepage col-md-12">
+
+   <!-- show any messages that come back with authentication -->
+   {{#if message}}
+     <div class="alert alert-info col-md-10 col-md-offset-1">{{message}}</div>
+   {{/if}}
+
+   <div class="main-header col-md-6">
+
+      <h2>Stress</h2>
+
+      <form method="POST" action="/addStressForm">
+         <div class="add-main-section add-stresses-sec" style="display:table;height:300px;">
+            <div class="form-group" style="display:table-cell;vertical-align:top;">
+
+               <div class="add-new-stress">
+                  <label for="newStress">What's stressing you out?</label>
+                  <input type="text" class="form-control" id="newStress" name="newStress">
+                  <button>Submit</button>
+               </div>
+
+            </div>
+         </div>
+      </form>
+
+   </div>
+
+   <div class="main-header col-md-6">
+
+      <h2>Gripe</h2>
+
+      <form method="POST" action="/addGripeForm">
+         <div class="add-main-section add-gripes-sec" style="display:table;height:300px;">
+            <div class="form-group" style="display:table-cell;vertical-align:top;">
+               <label for="curStress">Pick a stress to add gripes to:</label>
+               <select class="form-control current-stress" id="curStress" name="curStress">
+                 {{#each stressObj}}
+                     <option name={{this.stressName}}>{{this.stressName}}</option>
+                 {{/each}}
+               </select>
+
+               <label for="newGripe">Add a new gripe for this stress</label>
+               <input type="text" class="form-control" id="newGripe" name="newGripe">
+               <button>Ugh, more buttons...</button>
+
+            </div>
+         </div>
+      </form>
+
+   </div>
+
+
+</div>
+
+<div class="col-md-12">
+   <div class="main-bottom">
+      <a href="/">Home</a> | <a href="/logout">Logout</a>
+   </div>
+</div>

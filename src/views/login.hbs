@@ -1,0 +1,48 @@
+<div class="login-page">
+   <div class="page-header">
+      <h4>【S】【G】【H】</h4>
+   </div>
+
+   <div class="container">
+
+      <h2>Logging in is so annoying...</h2>
+      <div class="login-container-outer">
+         <div class="col-md-6 col-md-offset-3 login-container">
+
+             <!-- show any messages that come back with authentication -->
+             {{#if message}}
+               <div class="alert alert-danger">{{message}}</div>
+             {{/if}}
+
+             <!-- LOGIN FORM -->
+             <form action="/login" method="post">
+                 <div class="form-group">
+                     <label>Email Or Username</label>
+                     <input type="text" class="form-control" name="email">
+                 </div>
+                 <div class="form-group">
+                     <label>Password</label>
+                     <input type="password" class="form-control" name="password">
+                 </div>
+
+                 <div class="login-form-button">
+                    <button type="submit" class="btn btn-lg">Login</button>
+                 </div>
+             </form>
+
+             <hr>
+
+             <p>Need an account? <a href="/signup">Signup Here</a></p>
+
+         </div>
+      </div>
+
+      <div class="col-md-12"><h3>Scientifically proven to reduce stress!*</h3></div>
+
+   </div>
+
+   <div class="col-md-10 col-xs-1"></div>
+   <div class="disclaimer col-md-2">
+      <p>*No scientists consulted.</p>
+   </div>
+</div>

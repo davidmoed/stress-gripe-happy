@@ -1,0 +1,45 @@
+<div class="page-header">
+   <h4><a href="/">【S】【G】【H】</a>- {{user.local.email}}</h4>
+</div>
+<div class="main-happy col-md-12">
+   <div class="col-md-2"></div>
+   <div class="col-md-8">
+      <div class="happy-section">
+         <h1>Cheer up! It's not that bad!</h1>
+         <h2>Here's a gif to help 💩</h2>
+
+
+         <script>console.log({{gifObject}});</script>
+         <div class="gif-container" style="display:table;height:350px;">
+            <div style="display:table-cell;vertical-align:middle;">
+               <img src={{gifObject.gif_url}}>
+            </div>
+         </div>
+         <form method="GET" action="">
+            <div class="form-group">
+               <button>Moar Gifs!</button>
+            </div>
+         </form>
+         <h3>Smile!</h3>
+      </div>
+      <div class="remove-stress col-md-12">
+         <form method="POST" action="deleteStress">
+            <div class="form-group">
+               <label for="curStress">Delete a stress</label>
+               <select class="form-control current-stress" id="curStress" name="curStress">
+                 {{#each stressObj}}
+                     <option name={{this.stressName}}>{{this.stressName}}</option>
+                 {{/each}}
+               </select>
+               <button>I'm over it</button>
+            </div>
+         </form>
+      </div>
+   </div>
+   <div class="col-md-2"></div>
+</div>
+<div class="col-md-12">
+   <div class="main-bottom">
+      <a href="/">Home</a> | <a href="/logout">Logout</a>
+   </div>
+</div>
