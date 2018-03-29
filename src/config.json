@@ -1,5 +1,5 @@
 {
-   "dbconf": "mongodb://localhost/stress-gripe-happy",
+   "dbconf": "mongodb://david:pw,8Qcf2axo,@ds127899.mlab.com:27899/sgh",
    "port": 27017,
    "giphy_api_key": "hEmTmcEWHO55vkoE7SAAHG3uqs70sSd7"
 }
