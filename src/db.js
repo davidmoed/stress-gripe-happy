@@ -115,6 +115,6 @@ if (process.env.NODE_ENV === 'PRODUCTION') {
    mongoose.connect(dbconf, {useMongoClient: true});
 } else {
     // if we're not in PRODUCTION mode, then use
-    let dbconf = 'mongodb://localhost:27017/sgh';
+    let dbconf = 'mongodb://david:pw,8Qcf2axo,@ds127899.mlab.com:27899/sgh';
     mongoose.connect(dbconf, {useMongoClient: true});
 }
