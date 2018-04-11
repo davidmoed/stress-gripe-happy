@@ -50,7 +50,8 @@ const publicPath = path.resolve(__dirname, "public");
 const jsdocPath = path.resolve(__dirname, "public/documentation");
 app.use(express.static(publicPath));
 app.set('views', path.join(__dirname,'/views'));
-app.set('docs', path.join(__dirname,'/documentation'))
+app.set('docs', path.join(__dirname,'/documentation'));
+
 
 
 app.set('view engine', 'hbs');
