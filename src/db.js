@@ -100,13 +100,17 @@ module.exports = mongoose.model('User', User);
    @name checkProduction
    @param {string} dbconf secret data with the login credentials pulled in order to connect to the proper location with mongodb
 */
+let dbconf = process.env.MONGOLAB_URI;
+mongoose.connect(dbconf, {useMongoClient: true});
+
+/*
 if (process.env.NODE_ENV === 'PRODUCTION') {
    // if we're in PRODUCTION mode, then read the configration from a file
    // use blocking file io to do this...
-   let dbconf = process.env.MONGOLAB_URI;
-   mongoose.connect(dbconf, {useMongoClient: true});
+   
 } else {
     // if we're not in PRODUCTION mode, then use
     let dbconf = 'mongodb://localhost:27017/sgh';
     mongoose.connect(dbconf, {useMongoClient: true});
 }
+*/
