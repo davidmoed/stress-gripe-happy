@@ -58,8 +58,11 @@ app.set('view engine', 'hbs');
 app.set('docs engine', 'hbs');
 
 
+app.set( 'port', ( process.env.PORT || 5000 ));
+
+
 const GphApiClient = require('giphy-js-sdk-core');
-const client = GphApiClient("YOUR_API_KEY");
+const client = GphApiClient(process.env.giphy_api_key);
 
 
 //end dependencies/modules
@@ -381,16 +384,7 @@ app.get('/happy', isLoggedIn, function(req, res) {
       //read in the giphy api key
       const theGif = [];
 
-      //get the api key from config.json
-      const fs = require('fs');
-      const path = require('path');
-      const fn = path.join(__dirname, 'config.json');
-      const data = fs.readFileSync(fn);
-
-      // our configuration file will be in json, so parse it and set the
-      // conenction string appropriately!
-      const conf = JSON.parse(data);
-      let apiKey = conf.giphy_api_key;
+      let apiKey = process.env.giphy_api_key;
 
       //get a random gif to display to the user, pulling from the first 75 gifs with the tag "happy"
       const randomizeGif = Math.floor(Math.random() * 75);
@@ -449,8 +443,10 @@ app.get('*', isLoggedIn, function(req, res){
   res.render('lost');
 });
 
-
-const port = process.env.PORT || 8000;
-app.listen(port, function() {
-    console.log("App is running on port " + port);
-});
+// const port = process.env.PORT || 8000;
+// app.listen(port, function() {
+//     console.log("App is running on port " + port);
+// });
+app.listen( app.get( 'port' ), function() {
+  console.log( 'Node server is running on port ' + app.get( 'port' ));
+  });
