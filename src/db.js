@@ -98,7 +98,7 @@ module.exports = mongoose.model('User', User);
 /**
    Check if the environment variable, NODE_ENV is set to PRODUCTION
    @name checkProduction
-   @param {string} dbconf secret data with the login credentials pulled in order to connect to the proper location with mongodb
+   @param {string} dbconf the mLab mongodb url used with the heroku deploy
 */
 
 console.log(process.env.NODE_ENV);
