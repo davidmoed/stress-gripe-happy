@@ -220,22 +220,24 @@ app.get('/getGripe', isLoggedIn, function(req, res) {
    });
 
    let gripeArr = [];
-   try {
-      Stress.findOne({stressName : req.query.theStress}, function(err, stress, count) {
+   Stress.findOne({stressName : req.query.theStress}, function(err, stress, count) {
 
-         //get all of the gripes
-         gripeArr = stress.gripes;
-         console.log('gripe arr: ', gripeArr);
+      //get all of the gripes
+      gripeArr = stress.gripes;
 
+      if (girpeArr.length > 0) {
          const randomGripeNum = Math.floor(Math.random() * gripeArr.length) - 1;
 
          console.log("DEV - Random gripe #" + randomGripeNum + " loaded: " + gripeArr[randomGripeNum].gripeStr);
 
          res.render('main', {stressObj: stresses, gripeArr: gripeArr[randomGripeNum]});
-      });
-   } catch(e) {
-      error.log('Dev - Stress not found ' + e)
-   }
+      } else {
+         console.log('error', err)
+      }
+
+
+   });
+
 
 });
 
