@@ -223,10 +223,12 @@ app.get('/getGripe', isLoggedIn, function(req, res) {
    let gripeArr = [];
    Stress.findOne({stressName : req.query.theStress}, function(err, stress, count) {
 
+      console.log('stress: ', stress);
+      console.log('num gripes: ' + stress.totalGripes);
       //get all of the gripes
       gripeArr = stress.gripes;
 
-      if (girpeArr.length > 0) {
+      if (gripeArr.length > 0) {
          const randomGripeNum = Math.floor(Math.random() * gripeArr.length) - 1;
 
          console.log("DEV - Random gripe #" + randomGripeNum + " loaded: " + gripeArr[randomGripeNum].gripeStr);
