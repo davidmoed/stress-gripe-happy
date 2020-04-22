@@ -214,6 +214,7 @@ app.get('/getGripe', isLoggedIn, function(req, res) {
             const temp = stresses[0];
             stresses[0] = stresses[i];
             stresses[i] = temp;
+            break;
          }
       }
       console.log("DEV - Stress order reshuffled, " + req.query.theStress + " now on top of dropdown");
@@ -222,6 +223,8 @@ app.get('/getGripe', isLoggedIn, function(req, res) {
    let gripeArr = [];
    Stress.findOne({stressName : req.query.theStress}, function(err, stress, count) {
 
+      console.log('stress', stress);
+      console.log('num of gripes', stress.totalGripes);
       //get all of the gripes
       gripeArr = stress.gripes;
 
