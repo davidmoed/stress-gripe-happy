@@ -223,8 +223,6 @@ app.get('/getGripe', isLoggedIn, function(req, res) {
    let gripeArr = [];
    Stress.findOne({stressName : req.query.theStress}, function(err, stress, count) {
 
-      console.log('stress', stress);
-      console.log('num of gripes', stress.totalGripes);
       //get all of the gripes
       gripeArr = stress.gripes;
 
