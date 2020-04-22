@@ -53,14 +53,13 @@ app.set('views', path.join(__dirname,'/views'));
 app.set('docs', path.join(__dirname,'/documentation'));
 
 
-
 app.set('view engine', 'hbs');
 app.set('docs engine', 'hbs');
 
 
 app.set( 'port', ( process.env.PORT || 5000 ));
 
-
+// https://media.giphy.com/media/Vuw9m5wXviFIQ/giphy.gif
 const GphApiClient = require('giphy-js-sdk-core');
 const client = GphApiClient(process.env.giphy_api_key);
 
@@ -221,17 +220,22 @@ app.get('/getGripe', isLoggedIn, function(req, res) {
    });
 
    let gripeArr = [];
-   Stress.findOne({stressName : req.query.theStress}, function(err, stress, count) {
+   try {
+      Stress.findOne({stressName : req.query.theStress}, function(err, stress, count) {
 
-      //get all of the gripes
-      gripeArr = stress.gripes;
+         //get all of the gripes
+         gripeArr = stress.gripes;
+         console.log('gripe arr: ', gripeArr);
 
-      const randomGripeNum = Math.floor(Math.random() * gripeArr.length);
+         const randomGripeNum = Math.floor(Math.random() * gripeArr.length) - 1;
 
-      console.log("DEV - Random gripe #" + randomGripeNum + " loaded: " + gripeArr[randomGripeNum].gripeStr);
+         console.log("DEV - Random gripe #" + randomGripeNum + " loaded: " + gripeArr[randomGripeNum].gripeStr);
 
-      res.render('main', {stressObj: stresses, gripeArr: gripeArr[randomGripeNum]});
-   });
+         res.render('main', {stressObj: stresses, gripeArr: gripeArr[randomGripeNum]});
+      });
+   } catch(e) {
+      error.log('Dev - Stress not found ' + e)
+   }
 
 });
 
@@ -389,6 +393,7 @@ app.get('/happy', isLoggedIn, function(req, res) {
       //get a random gif to display to the user, pulling from the first 75 gifs with the tag "happy"
       const randomizeGif = Math.floor(Math.random() * 75);
 
+      //TODO make api call async
       client.search('gifs', {"api_key": apiKey, "q": "happy", "limit": "1", "offset" : randomizeGif})
      .then((response) => {
        response.data.forEach((gifObject) => {
