@@ -221,23 +221,23 @@ app.get('/getGripe', isLoggedIn, function(req, res) {
    });
 
    let gripeArr = [];
+   let gripeIndex = 0;
    Stress.findOne({stressName : req.query.theStress}, function(err, stress, count) {
 
-      console.log('stress: ', stress);
-      console.log('num gripes: ' + stress.totalGripes);
       //get all of the gripes
       gripeArr = stress.gripes;
 
       if (gripeArr.length > 0) {
-         const randomGripeNum = Math.floor(Math.random() * gripeArr.length) - 1;
+         const randomGripeNum = Math.floor(Math.random() * gripeArr.length);
+         gripeIndex = randomGripeNum
 
          console.log("DEV - Random gripe #" + randomGripeNum + " loaded: " + gripeArr[randomGripeNum].gripeStr);
-
-         res.render('main', {stressObj: stresses, gripeArr: gripeArr[randomGripeNum]});
       } else {
-         console.log('error', err)
+         gripeArr[0] = "You don't have any gripes for this stress yet"
       }
 
+
+      res.render('main', {stressObj: stresses, gripeArr: gripeArr[gripeIndex]});
 
    });
 
