@@ -227,21 +227,20 @@ app.get('/getGripe', isLoggedIn, function(req, res) {
       //get all of the gripes
       gripeArr = stress.gripes;
 
-      if (gripeArr.length > 0) {
+      if (gripeArr.length > 0 && gripeArr[0] !== "") {
          const randomGripeNum = Math.floor(Math.random() * gripeArr.length);
          gripeIndex = randomGripeNum
 
          console.log("DEV - Random gripe #" + randomGripeNum + " loaded: " + gripeArr[randomGripeNum].gripeStr);
       } else {
-         gripeArr[0] = "You don't have any gripes for this stress yet"
+         console.log("DEV - No gripes for " + stress.stressName);
+         gripeArr[0] = ""
       }
 
 
       res.render('main', {stressObj: stresses, gripeArr: gripeArr[gripeIndex]});
 
    });
-
-
 });
 
 
@@ -262,6 +261,7 @@ app.get('/add', isLoggedIn, function(req, res) {
       for (let i = 0; i < stress.length; i++) {
          stresses.push(stress[i]);
       }
+      console.log("DEV - " + stresses);
       console.log("DEV - Add page loaded with existing stresses");
    });
 
