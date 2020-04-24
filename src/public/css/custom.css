@@ -20,8 +20,8 @@ label {
    color: black;
 }
 
-.header-home-link {
-   float: right;
+.header-home-link a {
+   text-align: right;
    color: #337ab7;
 }
 
