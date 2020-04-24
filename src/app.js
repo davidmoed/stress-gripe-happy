@@ -329,14 +329,23 @@ app.post("/addGripeForm", function(req, res) {
    //if there's a new gripe
    if (req.body.newGripe !== '') {
 
-      for (let i = 0; i < stresses.length; i++) {
-         if (stresses[i].stressName === req.body.curStress) {
-            const temp = stresses[0];
-            stresses[0] = stresses[i];
-            stresses[i] = temp;
-            break;
+      //reorder stresses in dropdown
+      const stresses = [];
+      Stress.find({_users: req.user}, function (err, stress) {
+         for (let i = 0; i < stress.length; i++) {
+            stresses.push(stress[i]);
          }
-      }
+
+         for (let i = 0; i < stresses.length; i++) {
+            if (stresses[i].stressName === req.body.curStress) {
+               const temp = stresses[0];
+               stresses[0] = stresses[i];
+               stresses[i] = temp;
+               break;
+            }
+         }
+         console.log("DEV - Stress order reshuffled, " + req.body.curStress + " now on top of dropdown");
+      });
 
       //check the db to see if the new stress is already there
       Stress.findOne({stressName: req.body.curStress, _users: req.user}, function (err, stress) {
