@@ -448,6 +448,9 @@ app.post("/deleteStress", function(req, res) {
             console.log("DEV - Removing stress: " + stress.stressName);
             //update the stress in the db
             res.redirect('/happy');
+         } else {
+            const message = "You don't have any stresses and gripes yet, try typing in a stress to the left window and afterwards adding a gripe to it in the right window."
+            res.render('add', {message: message, user : req.user});
          }
       });
 
