@@ -442,12 +442,14 @@ app.get('/happy', isLoggedIn, function(req, res) {
 */
 app.post("/deleteStress", function(req, res) {
 
-   Stress.findOneAndRemove({stressName: req.body.curStress, _users: req.user}, function (err, stress) {
+   if (req.body.curStress !== '') {
+      Stress.findOneAndRemove({stressName: req.body.curStress, _users: req.user}, function (err, stress) {
 
-      console.log("DEV - Removing stress: " + stress.stressName);
-      //update the stress in the db
-      res.redirect('/happy');
-   });
+         console.log("DEV - Removing stress: " + stress.stressName);
+         //update the stress in the db
+         res.redirect('/happy');
+      });
+   }
 
 });
 
