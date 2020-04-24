@@ -234,7 +234,7 @@ app.get('/getGripe', isLoggedIn, function(req, res) {
          console.log("DEV - Random gripe #" + randomGripeNum + "out of" + gripeArr.length + " loaded: " + gripeArr[randomGripeNum].gripeStr);
       } else {
          console.log("DEV - No gripes for " + stress.stressName);
-         gripeArr[0] = "No gripes for this yet!"
+         gripeArr[0] = ""
       }
 
 
@@ -361,7 +361,7 @@ app.post("/addGripeForm", function(req, res) {
                console.log("DEV - Gripe added: " + req.body.newGripe);
             });
          }
-         res.redirect('/');
+         res.redirect('/add');
       });
    }
 
