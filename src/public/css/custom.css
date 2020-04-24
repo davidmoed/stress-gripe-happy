@@ -20,6 +20,11 @@ label {
    color: black;
 }
 
+.header-home-link {
+   float: right;
+   color: #337ab7;
+}
+
 .main-bottom {
    margin: 20px 0 10px;
    text-align: center;
