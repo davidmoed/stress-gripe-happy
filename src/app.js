@@ -379,7 +379,7 @@ app.post("/addGripeForm", function(req, res) {
                console.log("DEV - Gripe added: " + req.body.newGripe);
             });
          }
-         res.redirect('/add');
+         res.render('add', {stressObj: stresses, user : req.user});
       });
    }
 
